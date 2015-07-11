@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
   @IBOutlet weak var webView: UIWebView!
   override func viewDidLoad() {
@@ -35,5 +35,13 @@ class ViewController: UIViewController {
   }
 
 
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    self.view.endEditing(true)
+  }
+
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.endEditing(true)
+    return true
+  }
 }
 
