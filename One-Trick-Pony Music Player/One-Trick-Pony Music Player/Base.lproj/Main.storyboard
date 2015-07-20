@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="One_Trick_Pony_Music_Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_silence" translatesAutoresizingMaskIntoConstraints="NO" id="fx3-WL-RdD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SR9-oI-YnJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="TK - White Silence" id="7bE-BP-Wf3"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiM-3t-rXs">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="stop" id="I5T-Xb-2eI">
+                                        <connections>
+                                            <action selector="stopPressed:" destination="vXZ-lx-hvc" id="fdG-X5-yKR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="f8f-pY-E9D">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="5dY-M5-JIa">
+                                            <rect key="frame" x="43" y="7" width="296" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="seekAudio:" destination="vXZ-lx-hvc" eventType="valueChanged" id="2OC-bx-hPu"/>
+                                            </connections>
+                                        </slider>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="play" id="cUe-Is-wCU">
+                                        <connections>
+                                            <action selector="playPressed:" destination="vXZ-lx-hvc" id="Np8-RV-fvP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="fx3-WL-RdD" secondAttribute="trailing" constant="-16" id="20C-a5-rFl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wiM-3t-rXs" secondAttribute="trailing" constant="-16" id="7h2-oN-hXe"/>
+                            <constraint firstItem="fx3-WL-RdD" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="7nA-V6-fDJ"/>
+                            <constraint firstItem="fx3-WL-RdD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="9eh-hx-Cwz"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="wiM-3t-rXs" secondAttribute="bottom" id="dr8-lB-Kh3"/>
+                            <constraint firstItem="wiM-3t-rXs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="rOy-oV-bpa"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fx3-WL-RdD" secondAttribute="bottom" id="yd2-bp-uaw"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="progressSlider" destination="5dY-M5-JIa" id="5Ci-hf-uWq"/>
+                        <outlet property="toolbar" destination="wiM-3t-rXs" id="uUZ-Xt-dyR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.5" y="406.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="white_silence" width="395" height="395"/>
+    </resources>
+</document>
