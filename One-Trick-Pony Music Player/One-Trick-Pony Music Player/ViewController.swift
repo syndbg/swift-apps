@@ -68,10 +68,6 @@ class ViewController: UIViewController {
     }
   }
 
-  func hasFinishedPlaying() {
-
-  }
-
   func startUpdatingProgress() {
     timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
   }
