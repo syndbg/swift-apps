@@ -40,7 +40,6 @@ class ViewController: UIViewController {
       progressSlider.maximumValue = Float(audioPlayer.duration)
       audioPlayer.currentTime = NSTimeInterval(progressSlider.value)
     }
-
   }
 
   func createPauseButton() -> UIBarButtonItem {
@@ -53,12 +52,24 @@ class ViewController: UIViewController {
 
   @IBAction func stopPressed(sender: UIBarButtonItem) {
     audioPlayer.stop()
+    stop()
+  }
+
+  func stop() {
     audioPlayer.currentTime = 0
     changeLeftButton(createPlayButton())
   }
 
   func updateProgress() {
     progressSlider.value = Float(audioPlayer.currentTime)
+
+    if !audioPlayer.playing {
+      stop()
+    }
+  }
+
+  func hasFinishedPlaying() {
+
   }
 
   func startUpdatingProgress() {
